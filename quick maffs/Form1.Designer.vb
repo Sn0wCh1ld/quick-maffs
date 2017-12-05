@@ -82,13 +82,14 @@ Partial Class Form1
         Me.btnSoumettre.Name = "btnSoumettre"
         Me.btnSoumettre.Size = New System.Drawing.Size(128, 23)
         Me.btnSoumettre.TabIndex = 5
-        Me.btnSoumettre.Text = "Button1"
+        Me.btnSoumettre.Text = "Soumettre"
         Me.btnSoumettre.UseVisualStyleBackColor = True
         '
         'Form1
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
+        Me.BackColor = System.Drawing.SystemColors.GradientInactiveCaption
         Me.ClientSize = New System.Drawing.Size(503, 261)
         Me.Controls.Add(Me.btnSoumettre)
         Me.Controls.Add(Me.Label4)
