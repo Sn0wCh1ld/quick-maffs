@@ -82,7 +82,7 @@ Partial Class Form1
         Me.btnSoumettre.Name = "btnSoumettre"
         Me.btnSoumettre.Size = New System.Drawing.Size(128, 23)
         Me.btnSoumettre.TabIndex = 5
-        Me.btnSoumettre.Text = "Button1"
+        Me.btnSoumettre.Text = "Soumettre"
         Me.btnSoumettre.UseVisualStyleBackColor = True
         '
         'Form1
