@@ -22,32 +22,33 @@ Partial Class Form1
     'Ne la modifiez pas à l'aide de l'éditeur de code.
     <System.Diagnostics.DebuggerStepThrough()> _
     Private Sub InitializeComponent()
-        Me.Label1 = New System.Windows.Forms.Label()
-        Me.Label2 = New System.Windows.Forms.Label()
+        Me.lblNombreGauche = New System.Windows.Forms.Label()
+        Me.lblNombreDroit = New System.Windows.Forms.Label()
         Me.Label3 = New System.Windows.Forms.Label()
-        Me.TextBox1 = New System.Windows.Forms.TextBox()
+        Me.txtReste = New System.Windows.Forms.TextBox()
         Me.Label4 = New System.Windows.Forms.Label()
+        Me.btnSoumettre = New System.Windows.Forms.Button()
         Me.SuspendLayout()
         '
-        'Label1
+        'lblNombreGauche
         '
-        Me.Label1.Font = New System.Drawing.Font("Mistral", 48.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label1.Location = New System.Drawing.Point(12, 9)
-        Me.Label1.Name = "Label1"
-        Me.Label1.Size = New System.Drawing.Size(163, 113)
-        Me.Label1.TabIndex = 0
-        Me.Label1.Text = "1"
-        Me.Label1.TextAlign = System.Drawing.ContentAlignment.MiddleCenter
+        Me.lblNombreGauche.Font = New System.Drawing.Font("Mistral", 48.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.lblNombreGauche.Location = New System.Drawing.Point(12, 9)
+        Me.lblNombreGauche.Name = "lblNombreGauche"
+        Me.lblNombreGauche.Size = New System.Drawing.Size(163, 113)
+        Me.lblNombreGauche.TabIndex = 0
+        Me.lblNombreGauche.Text = "1"
+        Me.lblNombreGauche.TextAlign = System.Drawing.ContentAlignment.MiddleCenter
         '
-        'Label2
+        'lblNombreDroit
         '
-        Me.Label2.Font = New System.Drawing.Font("Mistral", 48.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label2.Location = New System.Drawing.Point(328, 9)
-        Me.Label2.Name = "Label2"
-        Me.Label2.Size = New System.Drawing.Size(163, 113)
-        Me.Label2.TabIndex = 1
-        Me.Label2.Text = "1"
-        Me.Label2.TextAlign = System.Drawing.ContentAlignment.MiddleCenter
+        Me.lblNombreDroit.Font = New System.Drawing.Font("Mistral", 48.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.lblNombreDroit.Location = New System.Drawing.Point(328, 9)
+        Me.lblNombreDroit.Name = "lblNombreDroit"
+        Me.lblNombreDroit.Size = New System.Drawing.Size(163, 113)
+        Me.lblNombreDroit.TabIndex = 1
+        Me.lblNombreDroit.Text = "1"
+        Me.lblNombreDroit.TextAlign = System.Drawing.ContentAlignment.MiddleCenter
         '
         'Label3
         '
@@ -59,12 +60,12 @@ Partial Class Form1
         Me.Label3.Text = "÷"
         Me.Label3.TextAlign = System.Drawing.ContentAlignment.MiddleCenter
         '
-        'TextBox1
+        'txtReste
         '
-        Me.TextBox1.Location = New System.Drawing.Point(25, 225)
-        Me.TextBox1.Name = "TextBox1"
-        Me.TextBox1.Size = New System.Drawing.Size(466, 20)
-        Me.TextBox1.TabIndex = 3
+        Me.txtReste.Location = New System.Drawing.Point(12, 225)
+        Me.txtReste.Name = "txtReste"
+        Me.txtReste.Size = New System.Drawing.Size(479, 20)
+        Me.txtReste.TabIndex = 3
         '
         'Label4
         '
@@ -75,16 +76,26 @@ Partial Class Form1
         Me.Label4.Text = "Reste:"
         Me.Label4.TextAlign = System.Drawing.ContentAlignment.MiddleCenter
         '
+        'btnSoumettre
+        '
+        Me.btnSoumettre.Location = New System.Drawing.Point(194, 145)
+        Me.btnSoumettre.Name = "btnSoumettre"
+        Me.btnSoumettre.Size = New System.Drawing.Size(128, 23)
+        Me.btnSoumettre.TabIndex = 5
+        Me.btnSoumettre.Text = "Button1"
+        Me.btnSoumettre.UseVisualStyleBackColor = True
+        '
         'Form1
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.ClientSize = New System.Drawing.Size(503, 261)
+        Me.Controls.Add(Me.btnSoumettre)
         Me.Controls.Add(Me.Label4)
-        Me.Controls.Add(Me.TextBox1)
+        Me.Controls.Add(Me.txtReste)
         Me.Controls.Add(Me.Label3)
-        Me.Controls.Add(Me.Label2)
-        Me.Controls.Add(Me.Label1)
+        Me.Controls.Add(Me.lblNombreDroit)
+        Me.Controls.Add(Me.lblNombreGauche)
         Me.MaximumSize = New System.Drawing.Size(519, 300)
         Me.MinimumSize = New System.Drawing.Size(519, 300)
         Me.Name = "Form1"
@@ -93,10 +104,11 @@ Partial Class Form1
         Me.PerformLayout()
 
     End Sub
-    Friend WithEvents Label1 As System.Windows.Forms.Label
-    Friend WithEvents Label2 As System.Windows.Forms.Label
+    Friend WithEvents lblNombreGauche As System.Windows.Forms.Label
+    Friend WithEvents lblNombreDroit As System.Windows.Forms.Label
     Friend WithEvents Label3 As System.Windows.Forms.Label
-    Friend WithEvents TextBox1 As System.Windows.Forms.TextBox
+    Friend WithEvents txtReste As System.Windows.Forms.TextBox
     Friend WithEvents Label4 As System.Windows.Forms.Label
+    Friend WithEvents btnSoumettre As System.Windows.Forms.Button
 
 End Class
