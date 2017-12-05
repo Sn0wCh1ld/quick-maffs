@@ -100,7 +100,7 @@ Partial Class Form1
         Me.MaximumSize = New System.Drawing.Size(519, 300)
         Me.MinimumSize = New System.Drawing.Size(519, 300)
         Me.Name = "Form1"
-        Me.Text = "Form1"
+        Me.Text = "Quick Maffs"
         Me.ResumeLayout(False)
         Me.PerformLayout()
 
