@@ -7,3 +7,6 @@ C:\Users\xavier.villemaire\Desktop\quick-maffs\quick maffs\obj\x86\Debug\quick m
 C:\Users\xavier.villemaire\Desktop\quick-maffs\quick maffs\obj\x86\Debug\quick maffs.xml
 C:\Users\xavier.villemaire\Desktop\quick-maffs\quick maffs\obj\x86\Debug\quick maffs.pdb
 C:\Users\xavier.villemaire\Desktop\quick-maffs\quick maffs\obj\x86\Debug\quick_maffs.Form1.resources
+P:\12ème année\VB Express\Sommatif\quick-maffs\quick maffs\obj\x86\Debug\quick maffs.exe
+P:\12ème année\VB Express\Sommatif\quick-maffs\quick maffs\obj\x86\Debug\quick maffs.xml
+P:\12ème année\VB Express\Sommatif\quick-maffs\quick maffs\obj\x86\Debug\quick maffs.pdb
