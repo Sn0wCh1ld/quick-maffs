@@ -38,7 +38,7 @@
         'chercher une nouvelle question
         nouvelleQuestion()
 
-        ReDim Preserve strDonnées(numQuestion - 1, 1)
+        ReDim strDonnées(numQuestion - 1, 1)
         strDonnées(numQuestion - 1, 0) = réponse
         strDonnées(numQuestion - 1, 1) = réponseDonné
 
