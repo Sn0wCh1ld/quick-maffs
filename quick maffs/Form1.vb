@@ -32,19 +32,17 @@
             MsgBox("Mauvaise réponse")
         End If
 
-        'incrémenter le nombre de la question
-        numQuestion = numQuestion + 1
-
-        'chercher une nouvelle question
-        nouvelleQuestion()
-
         ReDim strDonnées(numQuestion - 1, 1)
         strDonnées(numQuestion - 1, 0) = réponse
         strDonnées(numQuestion - 1, 1) = réponseDonné
 
         Console.WriteLine(strDonnées)
 
-        strDonnées = strDonnées
+        'incrémenter le nombre de la question
+        numQuestion = numQuestion + 1
+
+        'chercher une nouvelle question
+        nouvelleQuestion()
     End Sub
 
     Private Sub nouvelleQuestion()
