@@ -1,0 +1,9 @@
+C:\Users\xavier.villemaire\Desktop\quick-maffs\quick maffs\bin\Debug\quick maffs.exe
+C:\Users\xavier.villemaire\Desktop\quick-maffs\quick maffs\bin\Debug\quick maffs.pdb
+C:\Users\xavier.villemaire\Desktop\quick-maffs\quick maffs\bin\Debug\quick maffs.xml
+C:\Users\xavier.villemaire\Desktop\quick-maffs\quick maffs\obj\x86\Debug\quick_maffs.Resources.resources
+C:\Users\xavier.villemaire\Desktop\quick-maffs\quick maffs\obj\x86\Debug\quick maffs.vbproj.GenerateResource.Cache
+C:\Users\xavier.villemaire\Desktop\quick-maffs\quick maffs\obj\x86\Debug\quick maffs.exe
+C:\Users\xavier.villemaire\Desktop\quick-maffs\quick maffs\obj\x86\Debug\quick maffs.xml
+C:\Users\xavier.villemaire\Desktop\quick-maffs\quick maffs\obj\x86\Debug\quick maffs.pdb
+C:\Users\xavier.villemaire\Desktop\quick-maffs\quick maffs\obj\x86\Debug\quick_maffs.Form1.resources
