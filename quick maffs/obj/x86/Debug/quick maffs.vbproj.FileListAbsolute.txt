@@ -7,3 +7,12 @@ C:\Users\xavier.villemaire\Desktop\quick-maffs\quick maffs\obj\x86\Debug\quick m
 C:\Users\xavier.villemaire\Desktop\quick-maffs\quick maffs\obj\x86\Debug\quick maffs.xml
 C:\Users\xavier.villemaire\Desktop\quick-maffs\quick maffs\obj\x86\Debug\quick maffs.pdb
 C:\Users\xavier.villemaire\Desktop\quick-maffs\quick maffs\obj\x86\Debug\quick_maffs.Form1.resources
+C:\Users\justin.proulx\documents\visual studio 2010\Projects\quick maffs\quick maffs\obj\x86\Debug\quick maffs.exe
+C:\Users\justin.proulx\documents\visual studio 2010\Projects\quick maffs\quick maffs\obj\x86\Debug\quick maffs.xml
+C:\Users\justin.proulx\documents\visual studio 2010\Projects\quick maffs\quick maffs\obj\x86\Debug\quick maffs.pdb
+C:\Users\justin.proulx\documents\visual studio 2010\Projects\quick maffs\quick maffs\bin\Debug\quick maffs.exe
+C:\Users\justin.proulx\documents\visual studio 2010\Projects\quick maffs\quick maffs\bin\Debug\quick maffs.pdb
+C:\Users\justin.proulx\documents\visual studio 2010\Projects\quick maffs\quick maffs\bin\Debug\quick maffs.xml
+C:\Users\justin.proulx\documents\visual studio 2010\Projects\quick maffs\quick maffs\obj\x86\Debug\quick_maffs.frmQM.resources
+C:\Users\justin.proulx\documents\visual studio 2010\Projects\quick maffs\quick maffs\obj\x86\Debug\quick_maffs.Resources.resources
+C:\Users\justin.proulx\documents\visual studio 2010\Projects\quick maffs\quick maffs\obj\x86\Debug\quick maffs.vbproj.GenerateResource.Cache
