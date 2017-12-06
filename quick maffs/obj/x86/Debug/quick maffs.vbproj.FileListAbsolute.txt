@@ -19,9 +19,20 @@ C:\Users\justin.proulx\documents\visual studio 2010\Projects\quick maffs\quick m
 P:\12ème année\VB Express\Sommatif\quick-maffs\quick maffs\obj\x86\Debug\quick maffs.exe
 P:\12ème année\VB Express\Sommatif\quick-maffs\quick maffs\obj\x86\Debug\quick maffs.xml
 P:\12ème année\VB Express\Sommatif\quick-maffs\quick maffs\obj\x86\Debug\quick maffs.pdb
+<<<<<<< HEAD
+=======
+<<<<<<< HEAD
+=======
+>>>>>>> 448d99751a271eb579cb189db48b236a74f2ecc2
 P:\12ème année\VB Express\Sommatif\quick-maffs\quick maffs\bin\Debug\quick maffs.exe
 P:\12ème année\VB Express\Sommatif\quick-maffs\quick maffs\bin\Debug\quick maffs.pdb
 P:\12ème année\VB Express\Sommatif\quick-maffs\quick maffs\bin\Debug\quick maffs.xml
 P:\12ème année\VB Express\Sommatif\quick-maffs\quick maffs\obj\x86\Debug\quick_maffs.Form1.resources
 P:\12ème année\VB Express\Sommatif\quick-maffs\quick maffs\obj\x86\Debug\quick_maffs.Resources.resources
 P:\12ème année\VB Express\Sommatif\quick-maffs\quick maffs\obj\x86\Debug\quick maffs.vbproj.GenerateResource.Cache
+<<<<<<< HEAD
+=======
+>>>>>>> 074013a6d425ef87327b21d7a440a6960b1ff4bc
+>>>>>>> 41a5450ee28beae2ac2951830d5b4844563e7ba5
+>>>>>>> 3ee4b255e797326fd987144a1f289c6d7b0b7fc6
+>>>>>>> 448d99751a271eb579cb189db48b236a74f2ecc2
