@@ -32,7 +32,7 @@
             MsgBox("Mauvaise réponse")
         End If
 
-        ReDim strDonnées(numQuestion - 1, 1)
+        strDonnées = ReDimPreserve(strDonnées, 10, 20)
         strDonnées(numQuestion - 1, 0) = réponse
         strDonnées(numQuestion - 1, 1) = réponseDonné
 
@@ -44,6 +44,29 @@
         'chercher une nouvelle question
         nouvelleQuestion()
     End Sub
+
+    Public Function ReDimPreserve(ByVal aArrayToPreserve, ByVal nNewFirstUBound, ByVal nNewLastUBound)
+        ReDimPreserve = False
+        'check if its in array first
+        If IsArray(aArrayToPreserve) Then
+            'create new array
+            ReDim aPreservedArray(nNewFirstUBound, nNewLastUBound)
+            'get old lBound/uBound
+            nOldFirstUBound = uBound(aArrayToPreserve, 1)
+            nOldLastUBound = uBound(aArrayToPreserve, 2)
+            'loop through first
+            For nFirst = lBound(aArrayToPreserve, 1) To nNewFirstUBound
+                For nLast = lBound(aArrayToPreserve, 2) To nNewLastUBound
+                    'if its in range, then append to new array the same way
+                    If nOldFirstUBound >= nFirst And nOldLastUBound >= nLast Then
+                        aPreservedArray(nFirst, nLast) = aArrayToPreserve(nFirst, nLast)
+                    End If
+                Next
+            Next
+            'return the array redimmed
+            If IsArray(aPreservedArray) Then ReDimPreserve = aPreservedArray
+        End If
+    End Function
 
     Private Sub nouvelleQuestion()
         Dim numDroit As Integer = auHazard()
