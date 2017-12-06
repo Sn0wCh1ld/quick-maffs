@@ -2,6 +2,7 @@
 
     Dim numQuestion As Integer
     Dim réponse As Integer
+    Dim strDonnées(0, 1) As String
 
     Private Sub frmQM_Load(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles MyBase.Load
         'commencer avec la première question
@@ -31,9 +32,19 @@
             MsgBox("Mauvaise réponse")
         End If
 
-        numQuestion += 1
+        'incrémenter le nombre de la question
+        numQuestion = numQuestion + 1
 
+        'chercher une nouvelle question
         nouvelleQuestion()
+
+        ReDim Preserve strDonnées(numQuestion - 1, 1)
+        strDonnées(numQuestion - 1, 0) = réponse
+        strDonnées(numQuestion - 1, 1) = réponseDonné
+
+        Console.WriteLine(strDonnées)
+
+        strDonnées = strDonnées
     End Sub
 
     Private Sub nouvelleQuestion()
@@ -49,7 +60,7 @@
     Private Function auHazard()
         Randomize()
 
-        Dim nombre As Integer = CInt(Math.Floor((numQuestion * 2 - 1 + 1) * Rnd())) + 1
+        Dim nombre As Integer = CInt(Math.Floor((numQuestion * 2) * Rnd())) + 1
         Return nombre
     End Function
 End Class
