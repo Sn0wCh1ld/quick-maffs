@@ -19,6 +19,12 @@ C:\Users\justin.proulx\documents\visual studio 2010\Projects\quick maffs\quick m
 P:\12ème année\VB Express\Sommatif\quick-maffs\quick maffs\obj\x86\Debug\quick maffs.exe
 P:\12ème année\VB Express\Sommatif\quick-maffs\quick maffs\obj\x86\Debug\quick maffs.xml
 P:\12ème année\VB Express\Sommatif\quick-maffs\quick maffs\obj\x86\Debug\quick maffs.pdb
+<<<<<<< HEAD
+<<<<<<< HEAD
+=======
+>>>>>>> e00f596f87c0a4ec297ef770ccfcf2dfe5a82db0
+=======
+>>>>>>> eed7b02ca89de86ee72271dfee7ed950f6e50bd7
 P:\12ème année\VB Express\Sommatif\quick-maffs\quick maffs\bin\Debug\quick maffs.exe
 P:\12ème année\VB Express\Sommatif\quick-maffs\quick maffs\bin\Debug\quick maffs.pdb
 P:\12ème année\VB Express\Sommatif\quick-maffs\quick maffs\bin\Debug\quick maffs.xml
