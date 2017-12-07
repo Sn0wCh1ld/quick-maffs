@@ -28,11 +28,7 @@
     Private Sub btnSoumettre_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles btnSoumettre.Click
         Dim intRéponseDonné As Integer = Val(txtReste.Text)
 
-        If intRéponseDonné = intRéponse Then
-            MsgBox("Bonne réponse")
-        Else
-            MsgBox("Mauvaise réponse")
-        End If
+        
 
         ReDim Preserve intBonneRéponse(intNomQuestion - 1)
         ReDim Preserve intRéponsesDonnées(intNomQuestion - 1)
@@ -44,6 +40,18 @@
             intDonnées(Array.IndexOf(intBonneRéponse, intItem), 0) = intItem
             intDonnées(Array.IndexOf(intBonneRéponse, intItem), 1) = intRéponsesDonnées(Array.IndexOf(intBonneRéponse, intItem))
         Next
+
+        If intRéponseDonné = intRéponse Then
+            MsgBox("Bonne réponse")
+        Else
+            MsgBox("Mauvaise réponse")
+
+
+            Dim path As String = IO.Path.GetDirectoryName(SaveFileDialog.FileName)
+
+
+            Application.Restart()
+        End If
 
         'incrémenter le nombre de la question
         intNomQuestion = intNomQuestion + 1
