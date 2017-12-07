@@ -2,7 +2,7 @@
 
     Dim numQuestion As Integer
     Dim réponse As Integer
-    Dim strDonnées(0, 1) As String
+    Dim strDonnées(0, 0) As String
     Dim strBonneRéponse() As String
     Dim strRéponsesDonnées() As String
 
@@ -40,12 +40,18 @@
         ReDim Preserve strRéponsesDonnées(numQuestion - 1)
         strRéponsesDonnées(numQuestion - 1) = réponseDonné.ToString
 
-        Dim tempListe As Array = {strBonneRéponse, strRéponsesDonnées}
+        Dim tempListe As Object = {strBonneRéponse, strRéponsesDonnées}
 
-        ReDim strDonnées(numQuestion - 1, 1)
+        'ReDim strDonnées(numQuestion - 1, 1)
         'strDonnées = tempListe
 
-        Console.WriteLine(strBonneRéponse)
+        ReDim strDonnées(numQuestion - 1, 1)
+        For Each item As String In strBonneRéponse
+            strDonnées(Array.IndexOf(strBonneRéponse, item), 0) = item
+            strDonnées(Array.IndexOf(strRéponsesDonnées, item), 1) = strRéponsesDonnées(Array.IndexOf(strRéponsesDonnées, item))
+        Next
+
+        'strDonnées = tempListe
 
         'incrémenter le nombre de la question
         numQuestion = numQuestion + 1
