@@ -1,6 +1,6 @@
 ﻿Public Class frmQM
 
-    Dim intNumQuestion As Integer
+    Dim intNomQuestion As Integer
     Dim intRéponse As Integer
     Dim intDonnées(0, 0) As Integer
     Dim intBonneRéponse() As Integer
@@ -8,64 +8,64 @@
 
     Private Sub frmQM_Load(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles MyBase.Load
         'commencer avec la première question
-        intNumQuestion = 1
-        Dim premièreRéponse As Integer = premièreQuestion()
-        intRéponse = premièreRéponse
+        intNomQuestion = 1
+        Dim intPremièreRéponse As Integer = premièreQuestion()
+        intRéponse = intPremièreRéponse
     End Sub
 
     Private Function premièreQuestion()
-        Dim numGauche As Integer = 1
-        Dim numDroit As Integer = 1
+        Dim intNomGauche As Integer = 1
+        Dim intNomDroit As Integer = 1
 
         'calculer la réponse
-        Return calculerRéponse(numGauche, numDroit)
+        Return calculerRéponse(intNomGauche, intNomDroit)
     End Function
 
-    Private Function calculerRéponse(ByVal numGauche, ByVal numDroit)
-        Return (numGauche Mod numDroit)
+    Private Function calculerRéponse(ByVal intNomGauche, ByVal intNomDroit)
+        Return (intNomGauche Mod intNomDroit)
     End Function
 
     Private Sub btnSoumettre_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles btnSoumettre.Click
-        Dim réponseDonné As Integer = Val(txtReste.Text)
+        Dim intRéponseDonné As Integer = Val(txtReste.Text)
 
-        If réponseDonné = intRéponse Then
+        If intRéponseDonné = intRéponse Then
             MsgBox("Bonne réponse")
         Else
             MsgBox("Mauvaise réponse")
         End If
 
-        ReDim Preserve intBonneRéponse(intNumQuestion - 1)
-        ReDim Preserve intRéponsesDonnées(intNumQuestion - 1)
-        intBonneRéponse(intNumQuestion - 1) = intRéponse
-        intRéponsesDonnées(intNumQuestion - 1) = réponseDonné
+        ReDim Preserve intBonneRéponse(intNomQuestion - 1)
+        ReDim Preserve intRéponsesDonnées(intNomQuestion - 1)
+        intBonneRéponse(intNomQuestion - 1) = intRéponse
+        intRéponsesDonnées(intNomQuestion - 1) = intRéponseDonné
 
-        ReDim intDonnées(intNumQuestion - 1, 1)
-        For Each item As Integer In intBonneRéponse
-            intDonnées(Array.IndexOf(intBonneRéponse, item), 0) = item
-            intDonnées(Array.IndexOf(intBonneRéponse, item), 1) = intRéponsesDonnées(Array.IndexOf(intBonneRéponse, item))
+        ReDim intDonnées(intNomQuestion - 1, 1)
+        For Each intItem As Integer In intBonneRéponse
+            intDonnées(Array.IndexOf(intBonneRéponse, intItem), 0) = intItem
+            intDonnées(Array.IndexOf(intBonneRéponse, intItem), 1) = intRéponsesDonnées(Array.IndexOf(intBonneRéponse, intItem))
         Next
 
         'incrémenter le nombre de la question
-        intNumQuestion = intNumQuestion + 1
+        intNomQuestion = intNomQuestion + 1
 
         'chercher une nouvelle question
         nouvelleQuestion()
     End Sub
 
     Private Sub nouvelleQuestion()
-        Dim numDroit As Integer = auHazard()
-        Dim numGauche As Integer = auHazard() + numDroit
+        Dim intNomDroit As Integer = auHazard()
+        Dim intNomGauche As Integer = auHazard() + intNomDroit
 
-        intRéponse = calculerRéponse(numGauche, numDroit)
+        intRéponse = calculerRéponse(intNomGauche, intNomDroit)
 
-        lblNombreGauche.Text = numGauche
-        lblNombreDroit.Text = numDroit
+        lblNombreGauche.Text = intNomGauche
+        lblNombreDroit.Text = intNomDroit
     End Sub
 
     Private Function auHazard()
         Randomize()
 
-        Dim nombre As Integer = CInt(Math.Floor((intNumQuestion * 2) * Rnd())) + 1
-        Return nombre
+        Dim intNombre As Integer = CInt(Math.Floor((intNomQuestion * 2) * Rnd())) + 1
+        Return intNombre
     End Function
 End Class
