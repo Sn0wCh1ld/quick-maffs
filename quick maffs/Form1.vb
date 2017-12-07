@@ -3,6 +3,8 @@
     Dim numQuestion As Integer
     Dim réponse As Integer
     Dim strDonnées(0, 1) As String
+    Dim strBonneRéponse() As String
+    Dim strRéponsesDonnées() As String
 
     Private Sub frmQM_Load(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles MyBase.Load
         'commencer avec la première question
@@ -32,11 +34,18 @@
             MsgBox("Mauvaise réponse")
         End If
 
-        strDonnées = ReDimPreserve(strDonnées, 10, 20)
-        strDonnées(numQuestion - 1, 0) = réponse
-        strDonnées(numQuestion - 1, 1) = réponseDonné
+        ReDim Preserve strBonneRéponse(numQuestion - 1)
+        strBonneRéponse(numQuestion - 1) = réponse.ToString
 
-        Console.WriteLine(strDonnées)
+        ReDim Preserve strRéponsesDonnées(numQuestion - 1)
+        strRéponsesDonnées(numQuestion - 1) = réponseDonné.ToString
+
+        Dim tempListe As Array = {strBonneRéponse, strRéponsesDonnées}
+
+        ReDim strDonnées(numQuestion - 1, 1)
+        'strDonnées = tempListe
+
+        Console.WriteLine(strBonneRéponse)
 
         'incrémenter le nombre de la question
         numQuestion = numQuestion + 1
@@ -44,29 +53,6 @@
         'chercher une nouvelle question
         nouvelleQuestion()
     End Sub
-
-    Public Function ReDimPreserve(ByVal aArrayToPreserve, ByVal nNewFirstUBound, ByVal nNewLastUBound)
-        ReDimPreserve = False
-        'check if its in array first
-        If IsArray(aArrayToPreserve) Then
-            'create new array
-            ReDim aPreservedArray(nNewFirstUBound, nNewLastUBound)
-            'get old lBound/uBound
-            nOldFirstUBound = uBound(aArrayToPreserve, 1)
-            nOldLastUBound = uBound(aArrayToPreserve, 2)
-            'loop through first
-            For nFirst = lBound(aArrayToPreserve, 1) To nNewFirstUBound
-                For nLast = lBound(aArrayToPreserve, 2) To nNewLastUBound
-                    'if its in range, then append to new array the same way
-                    If nOldFirstUBound >= nFirst And nOldLastUBound >= nLast Then
-                        aPreservedArray(nFirst, nLast) = aArrayToPreserve(nFirst, nLast)
-                    End If
-                Next
-            Next
-            'return the array redimmed
-            If IsArray(aPreservedArray) Then ReDimPreserve = aPreservedArray
-        End If
-    End Function
 
     Private Sub nouvelleQuestion()
         Dim numDroit As Integer = auHazard()
