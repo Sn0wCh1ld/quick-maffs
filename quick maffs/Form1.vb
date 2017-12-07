@@ -2,9 +2,9 @@
 
     Dim numQuestion As Integer
     Dim réponse As Integer
-    Dim strDonnées(0, 0) As String
-    Dim strBonneRéponse() As String
-    Dim strRéponsesDonnées() As String
+    Dim strDonnées(0, 0) As Integer
+    Dim strBonneRéponse() As Integer
+    Dim strRéponsesDonnées() As Integer
 
     Private Sub frmQM_Load(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles MyBase.Load
         'commencer avec la première question
@@ -35,23 +35,15 @@
         End If
 
         ReDim Preserve strBonneRéponse(numQuestion - 1)
-        strBonneRéponse(numQuestion - 1) = réponse.ToString
-
         ReDim Preserve strRéponsesDonnées(numQuestion - 1)
-        strRéponsesDonnées(numQuestion - 1) = réponseDonné.ToString
-
-        Dim tempListe As Object = {strBonneRéponse, strRéponsesDonnées}
-
-        'ReDim strDonnées(numQuestion - 1, 1)
-        'strDonnées = tempListe
+        strBonneRéponse(numQuestion - 1) = réponse
+        strRéponsesDonnées(numQuestion - 1) = réponseDonné
 
         ReDim strDonnées(numQuestion - 1, 1)
-        For Each item As String In strBonneRéponse
+        For Each item As Integer In strBonneRéponse
             strDonnées(Array.IndexOf(strBonneRéponse, item), 0) = item
-            strDonnées(Array.IndexOf(strRéponsesDonnées, item), 1) = strRéponsesDonnées(Array.IndexOf(strRéponsesDonnées, item))
+            strDonnées(Array.IndexOf(strBonneRéponse, item), 1) = strRéponsesDonnées(Array.IndexOf(strBonneRéponse, item))
         Next
-
-        'strDonnées = tempListe
 
         'incrémenter le nombre de la question
         numQuestion = numQuestion + 1
