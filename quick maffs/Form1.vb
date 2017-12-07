@@ -2,9 +2,9 @@
 
     Dim numQuestion As Integer
     Dim réponse As Integer
-    Dim strDonnées(0, 0) As Integer
-    Dim strBonneRéponse() As Integer
-    Dim strRéponsesDonnées() As Integer
+    Dim intDonnées(0, 0) As Integer
+    Dim intBonneRéponse() As Integer
+    Dim intRéponsesDonnées() As Integer
 
     Private Sub frmQM_Load(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles MyBase.Load
         'commencer avec la première question
@@ -34,15 +34,15 @@
             MsgBox("Mauvaise réponse")
         End If
 
-        ReDim Preserve strBonneRéponse(numQuestion - 1)
-        ReDim Preserve strRéponsesDonnées(numQuestion - 1)
-        strBonneRéponse(numQuestion - 1) = réponse
-        strRéponsesDonnées(numQuestion - 1) = réponseDonné
+        ReDim Preserve intBonneRéponse(numQuestion - 1)
+        ReDim Preserve intRéponsesDonnées(numQuestion - 1)
+        intBonneRéponse(numQuestion - 1) = réponse
+        intRéponsesDonnées(numQuestion - 1) = réponseDonné
 
-        ReDim strDonnées(numQuestion - 1, 1)
-        For Each item As Integer In strBonneRéponse
-            strDonnées(Array.IndexOf(strBonneRéponse, item), 0) = item
-            strDonnées(Array.IndexOf(strBonneRéponse, item), 1) = strRéponsesDonnées(Array.IndexOf(strBonneRéponse, item))
+        ReDim intDonnées(numQuestion - 1, 1)
+        For Each item As Integer In intBonneRéponse
+            intDonnées(Array.IndexOf(intBonneRéponse, item), 0) = item
+            intDonnées(Array.IndexOf(intBonneRéponse, item), 1) = intRéponsesDonnées(Array.IndexOf(intBonneRéponse, item))
         Next
 
         'incrémenter le nombre de la question
