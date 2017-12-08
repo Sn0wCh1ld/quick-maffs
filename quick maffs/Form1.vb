@@ -50,16 +50,19 @@ Public Class frmQM
         Else
             MsgBox("Mauvaise réponse")
 
-            Dim nomFichier As String = Application.StartupPath & "\myarray.txt"
 
-            écriture("", nomFichier, False)
+            Dim nomFichier As String = chercherDossier() & "\résultats.txt"
 
-            Dim bonnesRéponsesString As String = String.Join(",", intBonneRéponse)
-            Dim donnéesRéponsesString As String = String.Join(",", intRéponsesDonnées)
+            If nomFichier.Length > 0 Then
+                écriture("", nomFichier, False)
 
-            écriture(bonnesRéponsesString, nomFichier, True)
-            écriture(donnéesRéponsesString, nomFichier, True)
+                Dim bonnesRéponsesString As String = String.Join(",", intBonneRéponse)
+                Dim donnéesRéponsesString As String = String.Join(",", intRéponsesDonnées)
 
+                écriture(bonnesRéponsesString, nomFichier, True)
+                écriture(donnéesRéponsesString, nomFichier, True)
+            End If
+            
             Application.Restart()
         End If
 
@@ -69,6 +72,20 @@ Public Class frmQM
         'chercher une nouvelle question
         nouvelleQuestion()
     End Sub
+
+    Private Function chercherDossier()
+        Dim dialogue As New FolderBrowserDialog()
+        dialogue.SelectedPath = "C:\"
+        dialogue.Description = "Choisir un dossier"
+        Dim path As String
+        If dialogue.ShowDialog() = Windows.Forms.DialogResult.OK Then
+            path = dialogue.SelectedPath
+        Else
+            path = ""
+        End If
+
+        Return Path
+    End Function
 
     Public Sub écriture(ByVal liste As String, ByVal nomFichier As String, ByVal append As Boolean)
         Dim strLecture As String
