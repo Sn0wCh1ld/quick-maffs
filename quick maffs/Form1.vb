@@ -50,13 +50,15 @@ Public Class frmQM
         Else
             MsgBox("Mauvaise réponse")
 
+            Dim nomFichier As String = Application.StartupPath & "\myarray.txt"
+
+            écriture("", nomFichier, False)
+
             Dim bonnesRéponsesString As String = String.Join(",", intBonneRéponse)
             Dim donnéesRéponsesString As String = String.Join(",", intRéponsesDonnées)
 
-            Dim nomFichier As String = Application.StartupPath & "\myarray.txt"
-
-            écriture(bonnesRéponsesString, nomFichier)
-            écriture(donnéesRéponsesString, nomFichier)
+            écriture(bonnesRéponsesString, nomFichier, True)
+            écriture(donnéesRéponsesString, nomFichier, True)
 
             Application.Restart()
         End If
@@ -68,10 +70,23 @@ Public Class frmQM
         nouvelleQuestion()
     End Sub
 
-    Public Sub écriture(ByVal liste As String, ByVal nomFichier As String)
-        Dim strLecture As String = My.Computer.FileSystem.ReadAllText(nomFichier)
+    Public Sub écriture(ByVal liste As String, ByVal nomFichier As String, ByVal append As Boolean)
+        Dim strLecture As String
+        If append = True And File.Exists(nomFichier) Then
+            strLecture = My.Computer.FileSystem.ReadAllText(nomFichier)
+        Else
+            strLecture = ""
+        End If
+
         Dim sw As New StreamWriter(nomFichier)
-        sw.WriteLine(strLecture + liste)
+
+        If liste.Length > 0 Then
+            sw.WriteLine(strLecture + liste)
+        Else
+            sw.Close()
+            File.Delete(nomFichier)
+        End If
+
         sw.Close()
     End Sub
 
