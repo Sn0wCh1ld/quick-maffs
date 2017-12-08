@@ -1,4 +1,7 @@
-﻿Public Class frmQM
+﻿Imports System
+Imports System.IO
+
+Public Class frmQM
 
     Dim intNomQuestion As Integer
     Dim intRéponse As Integer
@@ -28,7 +31,7 @@
     Private Sub btnSoumettre_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles btnSoumettre.Click
         Dim intRéponseDonné As Integer = Val(txtReste.Text)
 
-        
+
 
         ReDim Preserve intBonneRéponse(intNomQuestion - 1)
         ReDim Preserve intRéponsesDonnées(intNomQuestion - 1)
@@ -46,19 +49,13 @@
         Else
             MsgBox("Mauvaise réponse")
 
+            Dim bonnesRéponsesString As String = String.Join(",", intBonneRéponse)
+            Dim donnéesRéponsesString As String = String.Join(",", intRéponsesDonnées)
 
-            Dim FileName As String = Application.StartupPath & "\myarray.txt"
+            Dim nomFichier As String = Application.StartupPath & "\myarray.txt"
 
-            For index As Integer = 0 To intDonnées.Length / 2 - 1
-                Dim intRangée() As String = {"0"}
-
-                For indexColomne As Integer = 0 To 1
-                    ReDim Preserve intRangée(1)
-                    intRangée(indexColomne) = intDonnées(index, indexColomne).ToString
-                Next
-
-                IO.File.WriteAllLines(FileName, intRangée)
-            Next
+            écriture(bonnesRéponsesString, nomFichier)
+            écriture(donnéesRéponsesString, nomFichier)
 
             Application.Restart()
         End If
@@ -68,6 +65,13 @@
 
         'chercher une nouvelle question
         nouvelleQuestion()
+    End Sub
+
+    Public Sub écriture(ByVal liste As String, ByVal nomFichier As String)
+        Dim strLecture As String = My.Computer.FileSystem.ReadAllText(nomFichier)
+        Dim sw As New StreamWriter(nomFichier)
+        sw.WriteLine(strLecture + liste)
+        sw.Close()
     End Sub
 
     Private Sub nouvelleQuestion()
