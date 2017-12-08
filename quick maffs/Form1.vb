@@ -31,12 +31,8 @@ Public Class frmQM
     Private Sub btnSoumettre_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles btnSoumettre.Click
         Dim intRéponseDonné As Integer = Val(txtReste.Text)
 
-<<<<<<< HEAD
         txtReste.Select()
         txtReste.Clear()
-=======
-
->>>>>>> 17544ad102c2971c2f7d88652b376e1155024376
 
         ReDim Preserve intBonneRéponse(intNomQuestion - 1)
         ReDim Preserve intRéponsesDonnées(intNomQuestion - 1)
