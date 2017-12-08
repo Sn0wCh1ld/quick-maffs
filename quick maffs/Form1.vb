@@ -47,8 +47,18 @@
             MsgBox("Mauvaise réponse")
 
 
-            Dim path As String = IO.Path.GetDirectoryName(SaveFileDialog.FileName)
+            Dim FileName As String = Application.StartupPath & "\myarray.txt"
 
+            For index As Integer = 0 To intDonnées.Length / 2 - 1
+                Dim intRangée() As String = {"0"}
+
+                For indexColomne As Integer = 0 To 1
+                    ReDim Preserve intRangée(1)
+                    intRangée(indexColomne) = intDonnées(index, indexColomne).ToString
+                Next
+
+                IO.File.WriteAllLines(FileName, intRangée)
+            Next
 
             Application.Restart()
         End If
