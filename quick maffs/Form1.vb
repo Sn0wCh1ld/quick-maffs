@@ -95,16 +95,18 @@ Public Class frmQM
             strLecture = ""
         End If
 
-        Dim sw As New StreamWriter(nomFichier)
+        If File.Exists(nomFichier) Then
+            Dim sw As New StreamWriter(nomFichier)
 
-        If liste.Length > 0 Then
-            sw.WriteLine(strLecture + liste)
-        Else
+            If liste.Length > 0 Then
+                sw.WriteLine(strLecture + liste)
+            Else
+                sw.Close()
+                File.Delete(nomFichier)
+            End If
+
             sw.Close()
-            File.Delete(nomFichier)
         End If
-
-        sw.Close()
     End Sub
 
     Private Sub nouvelleQuestion()
@@ -123,4 +125,24 @@ Public Class frmQM
         Dim intNombre As Integer = CInt(Math.Floor((intNomQuestion * 2) * Rnd())) + 1
         Return intNombre
     End Function
+
+    Private Sub txtReste_TextChanged(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles txtReste.TextChanged
+        Dim nombres = "0123456789"
+
+        Dim texte As String = txtReste.Text
+        Dim nombre As String
+        Dim indexDeSelection As Integer = txtReste.SelectionStart
+        Dim changer As Integer
+
+        For x As Integer = 0 To txtReste.Text.Length - 1
+            nombre = txtReste.Text.Substring(x, 1)
+            If nombres.Contains(nombre) = False Then
+                texte = texte.Replace(nombre, String.Empty)
+                changer = 1
+            End If
+        Next
+
+        txtReste.Text = texte
+        txtReste.Select(indexDeSelection - changer, 0)
+    End Sub
 End Class
