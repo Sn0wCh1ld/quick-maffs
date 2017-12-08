@@ -28,11 +28,7 @@
     Private Sub btnSoumettre_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles btnSoumettre.Click
         Dim intRéponseDonné As Integer = Val(txtReste.Text)
 
-        If intRéponseDonné = intRéponse Then
-            MsgBox("Bonne réponse")
-        Else
-            MsgBox("Mauvaise réponse")
-        End If
+        
 
         ReDim Preserve intBonneRéponse(intNomQuestion - 1)
         ReDim Preserve intRéponsesDonnées(intNomQuestion - 1)
@@ -44,6 +40,28 @@
             intDonnées(Array.IndexOf(intBonneRéponse, intItem), 0) = intItem
             intDonnées(Array.IndexOf(intBonneRéponse, intItem), 1) = intRéponsesDonnées(Array.IndexOf(intBonneRéponse, intItem))
         Next
+
+        If intRéponseDonné = intRéponse Then
+            MsgBox("Bonne réponse")
+        Else
+            MsgBox("Mauvaise réponse")
+
+
+            Dim FileName As String = Application.StartupPath & "\myarray.txt"
+
+            For index As Integer = 0 To intDonnées.Length / 2 - 1
+                Dim intRangée() As String = {"0"}
+
+                For indexColomne As Integer = 0 To 1
+                    ReDim Preserve intRangée(1)
+                    intRangée(indexColomne) = intDonnées(index, indexColomne).ToString
+                Next
+
+                IO.File.WriteAllLines(FileName, intRangée)
+            Next
+
+            Application.Restart()
+        End If
 
         'incrémenter le nombre de la question
         intNomQuestion = intNomQuestion + 1
