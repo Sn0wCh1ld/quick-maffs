@@ -28,7 +28,8 @@
     Private Sub btnSoumettre_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles btnSoumettre.Click
         Dim intRéponseDonné As Integer = Val(txtReste.Text)
 
-        
+        txtReste.Select()
+        txtReste.Clear()
 
         ReDim Preserve intBonneRéponse(intNomQuestion - 1)
         ReDim Preserve intRéponsesDonnées(intNomQuestion - 1)
