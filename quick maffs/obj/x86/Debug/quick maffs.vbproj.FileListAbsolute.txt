@@ -22,7 +22,7 @@ P:\12ème année\VB Express\Sommatif\quick-maffs\quick maffs\obj\x86\Debug\quick
 P:\12ème année\VB Express\Sommatif\quick-maffs\quick maffs\bin\Debug\quick maffs.exe
 P:\12ème année\VB Express\Sommatif\quick-maffs\quick maffs\bin\Debug\quick maffs.pdb
 P:\12ème année\VB Express\Sommatif\quick-maffs\quick maffs\bin\Debug\quick maffs.xml
-P:\12ème année\VB Express\Sommatif\quick-maffs\quick maffs\obj\x86\Debug\quick_maffs.Form1.resources
 P:\12ème année\VB Express\Sommatif\quick-maffs\quick maffs\obj\x86\Debug\quick_maffs.Resources.resources
 P:\12ème année\VB Express\Sommatif\quick-maffs\quick maffs\obj\x86\Debug\quick maffs.vbproj.GenerateResource.Cache
 C:\Users\xavier.villemaire\Desktop\quick-maffs\quick maffs\obj\x86\Debug\quick_maffs.frmQM.resources
+P:\12ème année\VB Express\Sommatif\quick-maffs\quick maffs\obj\x86\Debug\quick_maffs.frmQM.resources

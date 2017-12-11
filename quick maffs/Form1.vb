@@ -51,16 +51,16 @@ Public Class frmQM
             MsgBox("Mauvaise réponse")
 
 
-            Dim nomFichier As String = chercherDossier() & "\résultats.txt"
+            Dim strNomFichier As String = chercherDossier() & "\résultats.txt"
 
-            If nomFichier.Length > 0 Then
-                écriture("", nomFichier, False)
+            If strNomFichier.Length > 0 Then
+                écriture("", strNomFichier, False)
 
-                Dim bonnesRéponsesString As String = String.Join(",", intBonneRéponse)
-                Dim donnéesRéponsesString As String = String.Join(",", intRéponsesDonnées)
+                Dim strBonnesRéponses As String = String.Join(",", intBonneRéponse)
+                Dim strDonnéesRéponses As String = String.Join(",", intRéponsesDonnées)
 
-                écriture(bonnesRéponsesString, nomFichier, True)
-                écriture(donnéesRéponsesString, nomFichier, True)
+                écriture(strBonnesRéponses, strNomFichier, True)
+                écriture(strDonnéesRéponses, strNomFichier, True)
             End If
             
             Application.Restart()
@@ -77,32 +77,32 @@ Public Class frmQM
         Dim dialogue As New FolderBrowserDialog()
         dialogue.SelectedPath = "C:\"
         dialogue.Description = "Choisir un dossier"
-        Dim path As String
+        Dim strPath As String
         If dialogue.ShowDialog() = Windows.Forms.DialogResult.OK Then
-            path = dialogue.SelectedPath
+            strPath = dialogue.SelectedPath
         Else
-            path = ""
+            strPath = ""
         End If
 
-        Return Path
+        Return strPath
     End Function
 
-    Public Sub écriture(ByVal liste As String, ByVal nomFichier As String, ByVal append As Boolean)
+    Public Sub écriture(ByVal liste As String, ByVal strNomFichier As String, ByVal append As Boolean)
         Dim strLecture As String
-        If append = True And File.Exists(nomFichier) Then
-            strLecture = My.Computer.FileSystem.ReadAllText(nomFichier)
+        If append = True And File.Exists(strNomFichier) Then
+            strLecture = My.Computer.FileSystem.ReadAllText(strNomFichier)
         Else
             strLecture = ""
         End If
 
-        If File.Exists(nomFichier) Then
-            Dim sw As New StreamWriter(nomFichier)
+        If File.Exists(strNomFichier) Then
+            Dim sw As New StreamWriter(strNomFichier)
 
             If liste.Length > 0 Then
                 sw.WriteLine(strLecture + liste)
             Else
                 sw.Close()
-                File.Delete(nomFichier)
+                File.Delete(strNomFichier)
             End If
 
             sw.Close()
@@ -129,20 +129,20 @@ Public Class frmQM
     Private Sub txtReste_TextChanged(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles txtReste.TextChanged
         Dim nombres = "0123456789"
 
-        Dim texte As String = txtReste.Text
-        Dim nombre As String
-        Dim indexDeSelection As Integer = txtReste.SelectionStart
-        Dim changer As Integer
+        Dim strTexte As String = txtReste.Text
+        Dim strNombre As String
+        Dim intIndexDeSelection As Integer = txtReste.SelectionStart
+        Dim intChanger As Integer
 
         For x As Integer = 0 To txtReste.Text.Length - 1
-            nombre = txtReste.Text.Substring(x, 1)
-            If nombres.Contains(nombre) = False Then
-                texte = texte.Replace(nombre, String.Empty)
-                changer = 1
+            strNombre = txtReste.Text.Substring(x, 1)
+            If nombres.Contains(strNombre) = False Then
+                strTexte = strTexte.Replace(strNombre, String.Empty)
+                intChanger = 1
             End If
         Next
 
-        txtReste.Text = texte
-        txtReste.Select(indexDeSelection - changer, 0)
+        txtReste.Text = strTexte
+        txtReste.Select(intIndexDeSelection - intChanger, 0)
     End Sub
 End Class
