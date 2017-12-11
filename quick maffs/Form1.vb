@@ -67,34 +67,21 @@ Public Class frmQM
                 'processus "Game Over"
 
                 'trouver l'endroit où l'utilisateur veut placer le fichier
-                Dim nomFichier As String = chercherDossier() & "\résultats.txt"
+                Dim strNomFichier As String = chercherDossier() & "\résultats.txt"
 
-<<<<<<< HEAD
                 'si l'utilisateur a choisi un endroit de sauvegarde, sauvegarder le fichier. Si non, ne pas le sauvegarder.
-                If nomFichier.Length > 0 Then
-                    écriture("", nomFichier, False)
+                If strNomFichier.Length > 0 Then
+                    écriture("", strNomFichier, False)
 
-                    Dim bonnesRéponsesString As String = String.Join(",", intBonneRéponse)
-                    Dim donnéesRéponsesString As String = String.Join(",", intRéponsesDonnées)
+                    Dim strBonnesRéponses As String = String.Join(",", intBonneRéponse)
+                    Dim strDonnéesRéponses As String = String.Join(",", intRéponsesDonnées)
 
-                    écriture(bonnesRéponsesString, nomFichier, True)
-                    écriture(donnéesRéponsesString, nomFichier, True)
+                    écriture(strBonnesRéponses, strNomFichier, True)
+                    écriture(strDonnéesRéponses, strNomFichier, True)
                 End If
 
                 'recommencer l'application
                 Application.Restart()
-=======
-            Dim strNomFichier As String = chercherDossier() & "\résultats.txt"
-
-            If strNomFichier.Length > 0 Then
-                écriture("", strNomFichier, False)
-
-                Dim strBonnesRéponses As String = String.Join(",", intBonneRéponse)
-                Dim strDonnéesRéponses As String = String.Join(",", intRéponsesDonnées)
-
-                écriture(strBonnesRéponses, strNomFichier, True)
-                écriture(strDonnéesRéponses, strNomFichier, True)
->>>>>>> 928e8846cb705c8cb52ff2b45aadbdcef124618e
             End If
 
             'incrémenter le nombre de la question
@@ -120,12 +107,8 @@ Public Class frmQM
             strPath = ""
         End If
 
-<<<<<<< HEAD
         'retourner le path du dossier choisi
-        Return path
-=======
         Return strPath
->>>>>>> 928e8846cb705c8cb52ff2b45aadbdcef124618e
     End Function
 
     Public Sub écriture(ByVal liste As String, ByVal strNomFichier As String, ByVal append As Boolean)
