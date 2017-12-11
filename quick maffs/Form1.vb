@@ -111,22 +111,22 @@ Public Class frmQM
         Return strPath
     End Function
 
-    Public Sub écriture(ByVal liste As String, ByVal strNomFichier As String, ByVal append As Boolean)
+    Public Sub écriture(ByVal strListe As String, ByVal strNomFichier As String, ByVal append As Boolean)
         Dim strLecture As String
         If append = True And File.Exists(strNomFichier) Then
             strLecture = My.Computer.FileSystem.ReadAllText(strNomFichier)
         Else
             strLecture = ""
+            If File.Exists(strNomFichier) Then
+                File.Delete(strNomFichier)
+            End If
         End If
 
-        If File.Exists(strNomFichier) Then
+        If append = True Then
             Dim sw As New StreamWriter(strNomFichier)
 
-            If liste.Length > 0 Then
-                sw.WriteLine(strLecture + liste)
-            Else
-                sw.Close()
-                File.Delete(strNomFichier)
+            If strListe.Length > 0 Then
+                sw.WriteLine(strLecture + strListe)
             End If
 
             sw.Close()
