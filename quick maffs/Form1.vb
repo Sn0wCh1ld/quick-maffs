@@ -113,6 +113,8 @@ Public Class frmQM
 
     Public Sub écriture(ByVal strListe As String, ByVal strNomFichier As String, ByVal append As Boolean)
         Dim strLecture As String
+
+        'si on veut ajouter au fichier, et il existe, lire les données actuelles. si non, donner mettre rien comme la valeur et si le fichier existe, le supprimer
         If append = True And File.Exists(strNomFichier) Then
             strLecture = My.Computer.FileSystem.ReadAllText(strNomFichier)
         Else
@@ -122,6 +124,7 @@ Public Class frmQM
             End If
         End If
 
+        'si on veut continuer à écrire au fichier, le faire
         If append = True Then
             Dim sw As New StreamWriter(strNomFichier)
 
@@ -134,23 +137,34 @@ Public Class frmQM
     End Sub
 
     Private Sub nouvelleQuestion()
+        'donner des nouvelles valeurs au hazard aux nombres de l'opération
         Dim intNomDroit As Integer = auHazard()
+        's'assurer que la valeur gauche est plus grande que la valeur droite
         Dim intNomGauche As Integer = auHazard() + intNomDroit
 
+        'calculer la réponse
         intRéponse = calculerRéponse(intNomGauche, intNomDroit)
 
+        'afficher les nombres de l'opération
         lblNombreGauche.Text = intNomGauche
         lblNombreDroit.Text = intNomDroit
     End Sub
 
     Private Function auHazard()
+        'randomize
         Randomize()
 
+        'calculer le nombre au hazard selon notre formule de difficulté (nombre de niveau * 2 * la valeur donnée par rand plus 1)
         Dim intNombre As Integer = CInt(Math.Floor((intNomQuestion * 2) * Rnd())) + 1
+
+        'retourner le nombre au hazard
         Return intNombre
     End Function
 
     Private Sub txtReste_TextChanged(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles txtReste.TextChanged
+        's'assurer que seulement des nombres sont entrées dans la boite de texte
+
+        'les caractères légales
         Dim nombres = "0123456789"
 
         Dim strTexte As String = txtReste.Text
@@ -158,6 +172,7 @@ Public Class frmQM
         Dim intIndexDeSelection As Integer = txtReste.SelectionStart
         Dim intChanger As Integer
 
+        'trouver des caractères illégaux dans la boite et les supprimer
         For x As Integer = 0 To txtReste.Text.Length - 1
             strNombre = txtReste.Text.Substring(x, 1)
             If nombres.Contains(strNombre) = False Then
